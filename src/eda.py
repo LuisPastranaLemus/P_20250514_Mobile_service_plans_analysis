@@ -163,6 +163,8 @@ def plot_heatmap(data, title='', xlabel='', ylabel='', cmap='YlGnBu', annot=True
     Returns:
     None: Displays the heatmap.
     """
+    # fmt='d' | fmt='.0f'
+    
     plt.figure(figsize=figsize)
     sns.heatmap(data, annot=annot, fmt=fmt, cmap=cmap, cbar_kws={'label': cbar_label})
 
@@ -357,8 +359,8 @@ def plot_dual_histogram(ds1, ds2, bins=10, color1='black', color2='grey',
 
     plt.figure(figsize=(15, 7))
 
-    sns.histplot(ds1, bins=bins, edgecolor='black', kde=False, color=color1, label=label1, alpha=0.6)
-    sns.histplot(ds2, bins=bins, edgecolor='black', kde=False, color=color2, label=label2, alpha=0.4)
+    sns.histplot(ds1, bins=bins, edgecolor='black', kde=False, color=color1, label=label1, alpha=0.8)
+    sns.histplot(ds2, bins=bins, edgecolor='black', kde=False, color=color2, label=label2, alpha=0.6)
 
     plt.axvline(mean1_val, color='red', linestyle='dashed', linewidth=1.5, label=f'{label1} Mean: {mean1_val:.2f}')
     plt.axvline(mean2_val, color='darkred', linestyle='dashed', linewidth=1.5, label=f'{label2} Mean: {mean2_val:.2f}')
