@@ -40,7 +40,8 @@ try:
                       plot_pairplot,
                       plot_scatter_matrix,
                       plot_scatter,
-                      plot_ecdf)
+                      plot_ecdf,
+                      plot_bar_comp)
     
     from .utils import(format_notebook)
                       
@@ -87,5 +88,6 @@ __all__ = ['load_dataset_from_zip',
            'plot_scatter_matrix',
            'plot_scatter',
            'plot_ecdf',
+           'plot_bar_comp',
            
            'format_notebook']

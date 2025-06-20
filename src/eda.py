@@ -711,3 +711,38 @@ def plot_ecdf(df, x_col, threshold=None, title=None, xlabel=None, ylabel='Cumula
 
     plt.tight_layout()
     plt.show()
+
+# Function to plot ECDF - Empirical Cumulative Distribution Function.
+# plot_plan_revenue_by_city(df_city_revenue, color1='darkblue', color2='silver', title='Ingresos por ciudad y plan')
+def plot_bar_comp(df, x_col, y_col, title, xlabel, ylabel, color1='black', color2='grey', alpha2=0.7,
+                  figsize=(15, 7), rotation=0, fontsize=8):
+    """
+    Plots a grouped bar chart comparing revenue by city for two different plans.
+
+    Parameters:
+    - df: DataFrame containing the data
+    - x_col: Column name for the X-axis (e.g., city)
+    - plan1: Column name for first plan revenue
+    - plan2: Column name for second plan revenue
+    - color1: Color for the first plan bars
+    - color2: Color for the second plan bars
+    - alpha2: Transparency for second plan bars
+    - title: Title of the plot
+    - xlabel: Label for X-axis
+    - ylabel: Label for Y-axis
+    - figsize: Size of the figure
+    - rotation: Rotation angle for x-axis labels
+    - fontsize: Font size for x-axis labels
+    """
+    plt.figure(figsize=figsize)
+    plt.bar(df[x_col], df[y_col[0]], label=y_col[0].upper(), color=color1)
+    plt.bar(df[x_col], df[y_col[1]], label=y_col[1].upper(), color=color2, alpha=alpha2)
+
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+    plt.xticks(range(len(df[x_col])), df[x_col], rotation=rotation, fontsize=fontsize)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
